@@ -1,0 +1,309 @@
+var = 1
+so_fork
+arg adress 0x5653220
+arg priority = 3
+priority push = 3
+so_fork
+arg adress 0x56533c0
+arg priority = 4
+size = 1
+swappppppp
+swap
+=====Before=====
+====First===
+priority = 3
+handler address = 0x10c7e1
+arg address = 0x5653220
+====Second====
+priority = 3
+handler address = 0x10c7e1
+arg address = 0x5653220
+=====After=====
+====First===
+priority = 3
+handler address = 0x10c7e1
+arg address = 0x5653220
+====Second====
+priority = 3
+handler address = 0x10c7e1
+arg address = 0x5653220
+priority push = 4
+run
+arg adress while = 0x56533c0
+priority while = 4
+handler while = 0x10c7c8
+size = 1
+swappppppp
+swap
+=====Before=====
+====First===
+priority = 4
+handler address = 0x10c7c8
+arg address = 0x56533c0
+====Second====
+priority = 4
+handler address = 0x10c7c8
+arg address = 0x56533c0
+=====After=====
+====First===
+priority = 4
+handler address = 0x10c7c8
+arg address = 0x56533c0
+====Second====
+priority = 4
+handler address = 0x10c7c8
+arg address = 0x56533c0
+arg adress while = 0x56533c0
+priority while = 4
+handler while = 0x10c7c8
+ler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 8
+==2332==    at 0x4E3E61C: swap (priority_queue.c:65)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 4
+==2332==    at 0x4E3E53D: print_thread (priority_queue.c:52)
+==2332==    by 0x4E3E693: swap (priority_queue.c:73)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c8 is 8 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 8
+==2332==    at 0x4E3E55B: print_thread (priority_queue.c:53)
+==2332==    by 0x4E3E693: swap (priority_queue.c:73)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 4
+==2332==    at 0x4E3E53D: print_thread (priority_queue.c:52)
+==2332==    by 0x4E3E6AB: swap (priority_queue.c:75)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c8 is 8 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 8
+==2332==    at 0x4E3E55B: print_thread (priority_queue.c:53)
+==2332==    by 0x4E3E6AB: swap (priority_queue.c:75)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 4
+==2332==    at 0x4E3E53D: print_thread (priority_queue.c:52)
+==2332==    by 0x4E3E725: swap (priority_queue.c:89)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c8 is 8 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 8
+==2332==    at 0x4E3E55B: print_thread (priority_queue.c:53)
+==2332==    by 0x4E3E725: swap (priority_queue.c:89)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 4
+==2332==    at 0x4E3E53D: print_thread (priority_queue.c:52)
+==2332==    by 0x4E3E73D: swap (priority_queue.c:91)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c8 is 8 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 8
+==2332==    at 0x4E3E55B: print_thread (priority_queue.c:53)
+==2332==    by 0x4E3E73D: swap (priority_queue.c:91)
+==2332==    by 0x4E3EAD4: priority_queue_pop (priority_queue.c:182)
+==2332==    by 0x4E3F69B: so_end (so_scheduler.c:59)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 4
+==2332==    at 0x4E3F6D4: so_end (so_scheduler.c:62)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c8 is 8 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid read of size 8
+==2332==    at 0x4E3F6F2: so_end (so_scheduler.c:63)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== Invalid free() / delete / delete[] / realloc()
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Address 0x56533c0 is 0 bytes inside a block of size 16 free'd
+==2332==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
+==2332==    by 0x4E3F718: so_end (so_scheduler.c:65)
+==2332==    by 0x10C89A: test_sched_10 (test_sched.c:321)
+==2332==    by 0x109298: main (run_test.c:120)
+==2332==  Block was alloc'd at
+==2332==    at 0x4C2FDFB: malloc (vg_replace_malloc.c:309)
+==2332==    by 0x4E3F7F4: so_fork (so_scheduler.c:111)
+==2332==    by 0x10C805: test_sched_handler_10_master (test_sched.c:301)
+==2332==    by 0x4E3F79F: so_start_thread (so_scheduler.c:96)
+==2332==    by 0x50496DA: start_thread (pthread_create.c:463)
+==2332==    by 0x538288E: clone (clone.S:95)
+==2332== 
+==2332== 
+==2332== HEAP SUMMARY:
+==2332==     in use at exit: 1,686 bytes in 7 blocks
+==2332==   total heap usage: 15 allocs, 9 frees, 6,614 bytes allocated
+==2332== 
+==2332== LEAK SUMMARY:
+==2332==    definitely lost: 32 bytes in 2 blocks
+==2332==    indirectly lost: 16 bytes in 1 blocks
+==2332==      possibly lost: 0 bytes in 0 blocks
+==2332==    still reachable: 1,638 bytes in 4 blocks
+==2332==         suppressed: 0 bytes in 0 blocks
+==2332== Rerun with --leak-check=full to see details of leaked memory
+==2332== 
+==2332== For lists of detected and suppressed errors, rerun with: -s
+==2332== ERROR SUMMARY: 13 errors from 13 contexts (suppressed: 0 from 0)
